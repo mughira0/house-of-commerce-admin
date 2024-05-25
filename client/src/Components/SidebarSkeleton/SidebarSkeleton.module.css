@@ -3,19 +3,21 @@
   align-items: center;
 }
 .leftMain {
-  width: 25%;
+  width: 17%;
   height: 100vh;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--secondary-color);
   overflow: auto;
 }
 .rightMain {
-  width: 75%;
+  width: 83%;
   height: 100vh;
   overflow: auto;
 }
 .header {
   background-color: var(--white-color);
-  width: 100%;
+  /* width: 100%; */
+  margin: 10px;
+  border-radius: 10px;
   height: 80px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -24,10 +26,12 @@
   align-items: center;
 }
 .logoMian {
-  width: 45px;
-  height: 35px;
+  width: 100%;
+  height: 200px;
 }
 .logoMian img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
 }
@@ -52,36 +56,42 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 10px 20px;
   margin-top: 20px;
   cursor: pointer;
   border-radius: 0 40px 40px 0;
 }
 .menuMain p {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--heading-color);
 }
 .content {
   padding: 20px;
 }
 .activeMenu {
-  background-color: #434242;
+  background-color: var(--heading-color);
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 10px 0 10px 40px;
+  margin-inline: 10px;
+  padding: 10px 10px 10px 20px;
   margin-top: 20px;
   cursor: pointer;
   border-radius: 0 40px 40px 0;
 }
 .activeMenu p {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--white-color);
 }
+.activeMenu svg,
+.mainMenu svg {
+  font-size: 16px !important;
+}
 .rightHeader {
-  justify-content: end;
+  justify-content: space-between;
+  padding-inline: 20px;
   padding-right: 20px;
 }
 .rightHeader div {
@@ -106,6 +116,57 @@
   cursor: pointer;
   display: none !important;
 }
+.headingMain p {
+  font-size: 21px;
+  margin-bottom: 0;
+  font-family: var(--ff-primary-bold);
+  color: var(--heading-color);
+}
+@media screen and (max-width: 1100px) {
+  .leftMain {
+    width: 20%;
+  }
+  .rightMain {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .leftMain {
+    width: 20%;
+  }
+  .rightMain {
+    width: 80%;
+  }
+  .menuBar {
+    display: block !important;
+    margin-left: 250px;
+    transition: 0.9s all;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .leftMain {
+    position: absolute;
+    width: 250px;
+    margin-left: -300px;
+    transition: 0.9s all;
+    z-index: 1;
+  }
+  .rightMain {
+    width: 100%;
+  }
+  .overFlow {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+    position: absolute;
+  }
+  .mainMenu {
+    gap: 10px;
+  }
+}
 @media screen and (max-width: 385px) {
   .header {
     height: 115px;
@@ -124,36 +185,5 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-  }
-}
-@media screen and (max-width: 991px) {
-  .menuBar {
-    display: block !important;
-    margin-left: 250px;
-    transition: 0.9s all;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .rightHeader {
-    justify-content: end;
-    padding-right: 0;
-  }
-  .leftMain {
-    position: absolute;
-    width: 250px;
-    margin-left: -300px;
-    transition: 0.9s all;
-    z-index: 1;
-  }
-  .rightMain {
-    width: 100%;
-  }
-  .overFlow {
-    background: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    height: 100%;
-    /* z-index: -1; */
-    position: absolute;
   }
 }

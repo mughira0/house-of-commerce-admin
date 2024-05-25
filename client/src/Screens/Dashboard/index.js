@@ -1,12 +1,12 @@
 import React from "react";
 import SidebarSkeleton from "../../Components/SidebarSkeleton";
 import classes from "./landing.module.css";
-function Courses() {
+function Dashboard() {
   return (
-    <SidebarSkeleton>
+    <SidebarSkeleton heading={"Dashboard"}>
       <div className={classes.pageMain}></div>
     </SidebarSkeleton>
   );
 }
 
-export default Courses;
+export default Dashboard;

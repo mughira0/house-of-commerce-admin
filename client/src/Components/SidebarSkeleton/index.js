@@ -3,7 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MdSpaceDashboard } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { logo } from "../../Constant/ImagePath";
+import { logo, userAvatar } from "../../Constant/ImagePath";
 import classes from "./SidebarSkeleton.module.css";
 const RenderComponent = ({ text, icon, path }) => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const RenderComponent = ({ text, icon, path }) => {
     </div>
   );
 };
-const SidebarSkeleton = ({ children }) => {
+const SidebarSkeleton = ({ children, heading }) => {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state?.authReducer);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -42,19 +42,16 @@ const SidebarSkeleton = ({ children }) => {
           style={windowSize < 991 && toggle ? { marginLeft: "0" } : {}}
           className={classes.leftMain}
         >
-          <div className={classes.header}>
+          <div>
             <div onClick={() => navigate("/")} className={classes.sideLogoMain}>
               <div className={classes.logoMian}>
                 <img src={logo} />
               </div>
-              <h3>
-                Let's <span>Learn</span>
-              </h3>
             </div>
           </div>
           <RenderComponent
-            path={"/users"}
-            text={"All Users"}
+            path={"/"}
+            text={"Dashboard"}
             icon={<MdSpaceDashboard color="var(--main-color)" size={30} />}
           />
           <RenderComponent
@@ -63,13 +60,8 @@ const SidebarSkeleton = ({ children }) => {
             icon={<MdSpaceDashboard color="var(--main-color)" size={30} />}
           />
           <RenderComponent
-            path={"/sold-course"}
+            path={"/settings"}
             text={"Sold Lesson"}
-            icon={<MdSpaceDashboard color="var(--main-color)" size={30} />}
-          />
-          <RenderComponent
-            path={"/contact"}
-            text={"Contact"}
             icon={<MdSpaceDashboard color="var(--main-color)" size={30} />}
           />
         </div>
@@ -90,9 +82,12 @@ const SidebarSkeleton = ({ children }) => {
             >
               <AiOutlineMenu size={20} />
             </div>
+            <div className={classes.headingMain}>
+              <p>{heading}</p>
+            </div>
             <div>
               <h3>{user?.name}</h3>
-              <img src={user?.avatar?.url} />
+              <img src={userAvatar} />
             </div>
           </div>
           <div className={classes.content}>{children}</div>

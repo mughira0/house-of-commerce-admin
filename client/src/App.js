@@ -7,12 +7,11 @@ import "../node_modules/react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Loader from "./Components/Loader";
 import BeforeLoginRoute from "./Helper/BeforeLoginRoute";
-import ProtectedRoute from "./Helper/ProtectedRoute";
 
 const Login = lazy(() => import("./Screens/Login"));
 const Signup = lazy(() => import("./Screens/Signup"));
-const Landing = lazy(() => import("./Screens/landing"));
-const Courses = lazy(() => import("./Screens/Courses"));
+const Dashboard = lazy(() => import("./Screens/Dashboard"));
+const Courses = lazy(() => import("./Screens/Course"));
 
 function App() {
   return (
@@ -33,23 +32,13 @@ function App() {
               exact
               element={<BeforeLoginRoute file={<Signup />} />}
             />
-            <Route
-              path="/"
-              exact
-              element={<ProtectedRoute file={<Landing />} />}
-            />
-            <Route
+            <Route path="/" exact element={<Dashboard />} />
+            <Route path="/courses" exact element={<Courses />} />
+            {/* <Route
               path="/courses"
               exact
               element={<ProtectedRoute file={<Courses />} />}
-            />
-            {/* // <Route path="*" exact element={<Landing />} /> */}
-            {/* <Route
-              path="/contact"
-              exact
-              element={<ProtectedRoute file={<Contact />} />}
-            />
-            <Route path="*" exact element={<Landing />} /> */}
+            /> */}
           </Routes>
         </Router>
       </Suspense>

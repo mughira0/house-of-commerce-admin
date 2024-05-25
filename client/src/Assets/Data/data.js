@@ -40,3 +40,41 @@ export const PostArray = [
     ],
   },
 ];
+
+export const CourseArray = [
+  {
+    _id: 1,
+    name: "B-Com Part-1",
+    date: Date.now(),
+    status: "active",
+    users: 22,
+  },
+  {
+    _id: 2,
+    name: "B-Com Part-2",
+    date: Date.now(),
+    status: "active",
+    users: 22,
+  },
+  {
+    _id: 3,
+    name: "B-Com Part-3",
+    date: Date.now(),
+    status: "active",
+    users: 22,
+  },
+  {
+    _id: 4,
+    name: "B-Com Part-4",
+    date: Date.now(),
+    status: "active",
+    users: 22,
+  },
+  {
+    _id: 5,
+    name: "B-Com Part-5",
+    date: Date.now(),
+    status: "active",
+    users: 22,
+  },
+];

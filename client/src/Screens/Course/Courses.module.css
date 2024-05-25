@@ -1,0 +1,13 @@
+.tableMain {
+  overflow: auto !important;
+}
+
+.table {
+  min-width: 800px;
+}
+
+@media screen and (max-width: 1110px) {
+  .table {
+    overflow-x: scroll;
+  }
+}
