@@ -1,13 +1,13 @@
 import React from "react";
-import ModalSkeleton from "../ModalSkeleton/ModalSkeleton";
-import classes from "./AreYouSureModal.module.css";
 import { TiWarningOutline } from "react-icons/ti";
 import Button from "../Button/Button";
+import ModalSkeleton from "../ModalSkeleton/ModalSkeleton";
+import classes from "./AreYouSureModal.module.css";
 const AreYouSureModal = ({
   setShow,
   show,
-  handleClick,
-  isDeleting,
+  onClick,
+  apiCall,
   text = "Your want to Delete this!",
 }) => {
   return (
@@ -20,9 +20,9 @@ const AreYouSureModal = ({
           <p>{text}</p>
           <div className={classes.btnMain}>
             <Button
-              disabled={isDeleting}
-              onClick={handleClick}
-              label={isDeleting ? "Loading..." : "Yes"}
+              disabled={apiCall}
+              onClick={onClick}
+              label={apiCall ? "Loading..." : "Yes"}
             />
             <Button onClick={() => setShow(false)} label={"No"} />
           </div>

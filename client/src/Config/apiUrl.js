@@ -10,3 +10,13 @@ export const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+export const recordLimit = 10;
+export const handleYearsOptions = () => {
+  let years = [];
+  let currentYear = new Date().getFullYear();
+  console.log(currentYear);
+  for (let i = 0; i < 5; i++) {
+    years.push({ label: currentYear - i, value: currentYear - i });
+  }
+  return years;
+};

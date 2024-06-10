@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./Loader.module.css";
 import Spinner from "react-bootstrap/Spinner";
+import classes from "./Loader.module.css";
 const Loader = () => {
   return (
     <>

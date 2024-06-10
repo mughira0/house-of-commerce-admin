@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./DropDown.module.css";
 import Select from "react-select";
+import classes from "./DropDown.module.css";
 
 const DropDown = ({
   option,
